@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;600&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #949393;
+}
+
+.slogan {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    display: table-column;
+
+    
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #020325;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0a0225;
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.logo img {
+    max-width: 75%;
+    height: auto;
+    width: auto\9; 
+    
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #4e4e4e00;
+}
+
+.grid-item {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image img,
+.matches-image img {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.main-footer {
+    background-color: #2e2d2d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
