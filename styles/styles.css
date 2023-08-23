@@ -1,12 +1,17 @@
+ .navbar-nav.navbar-nav .nav-item:hover .nav-link {
+   color: #007bff; }  
 
-header {
-    --bs-navbar-color: #2ed5f08c;
---bs-navbar-hover-color: #ffebebbf;
---bs-navbar-disabled-color: #645f5f40;
---bs-navbar-active-color: #2ed5f08c;
---bs-navbar-brand-color: #fff;
---bs-navbar-brand-hover-color: #fff;
---bs-navbar-toggler-border-color: rgba(169, 230, 0, 0.04)
+.navbar-brand img {
+    opacity: 0; /* Comienza con opacidad 0 para que no se vea inicialmente */
+    transform: translateX(-100%); /* Mueve el logo fuera de la vista a la izquierda */
+    animation: slideIn 0.5s forwards; /* Aplica la animación y retiene el estado final */
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1; /* Opacidad completa al final de la animación */
+        transform: translateX(0); /* Muestra el logo en su posición original */
+    }
 }
 .flex-container {
     display: flex;
@@ -34,11 +39,13 @@ header {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button:hover {
     background-color: #0a0225;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
@@ -46,14 +53,15 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
-
 .logo img {
     max-width: 75%;
     height: auto;
-    width: auto\9; 
-    
+    width: auto\9;
+    transition: transform 0.6s ease;
+}
+.logo:hover img {
+    transform: rotateY(360deg);
 }
 .grid-container {
     display: grid;
@@ -69,8 +77,6 @@ header {
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-
-.image img,
 .matches-image img {
     max-width: 100%;
     height: auto;
