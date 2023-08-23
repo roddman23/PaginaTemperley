@@ -1,0 +1,40 @@
+header {
+    position: relative;
+    background-color: #343a40;
+    transition: background-color 0.3s ease;
+
+    .navbar-brand img {
+        max-width: 100%;
+        height: auto;
+        transform-origin: left center;
+        animation: slideIn 0.5s ease-in-out;
+    }
+
+    .navbar-nav .nav-link {
+        color: white;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #007bff;
+        }
+    }
+
+    .logo img {
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
