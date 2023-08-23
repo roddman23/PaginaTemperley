@@ -1,4 +1,13 @@
 
+header {
+    --bs-navbar-color: #2ed5f08c;
+--bs-navbar-hover-color: #ffebebbf;
+--bs-navbar-disabled-color: #645f5f40;
+--bs-navbar-active-color: #2ed5f08c;
+--bs-navbar-brand-color: #fff;
+--bs-navbar-brand-hover-color: #fff;
+--bs-navbar-toggler-border-color: rgba(169, 230, 0, 0.04)
+}
 .flex-container {
     display: flex;
     flex-wrap: wrap;
