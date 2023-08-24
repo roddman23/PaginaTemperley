@@ -1,9 +1,8 @@
 .flex-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px;
     background-color: #949393;
+    padding: 20px;
   
     .slogan {
       flex: 1;
@@ -38,13 +37,10 @@
     }
   
     .logo {
-      width: 75%;
+      flex: 1;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #343a40;
-      padding: 20px;
-      transition: transform 0.6s ease;
+      justify-content: flex-end;
+      padding-left: 20px;
   
       img {
         max-width: 100%;
@@ -55,8 +51,5 @@
         }
       }
     }
-  
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
   }
+  
