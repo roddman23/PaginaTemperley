@@ -1,0 +1,62 @@
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #949393;
+  
+    .slogan {
+      flex: 1;
+      padding: 20px;
+      color: white;
+  
+      h1 {
+        font-size: 24px;
+      }
+  
+      h2 {
+        font-size: 18px;
+      }
+  
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #020325;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  
+        &:hover {
+          background-color: #0a0225;
+          transform: scale(1.1);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  
+    .logo {
+      width: 75%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #343a40;
+      padding: 20px;
+      transition: transform 0.6s ease;
+  
+      img {
+        max-width: 100%;
+        height: auto;
+  
+        &:hover {
+          transform: rotateY(360deg);
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
