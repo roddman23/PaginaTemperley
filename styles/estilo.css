@@ -42,20 +42,17 @@ header .logo img:hover {
 }
 .flex-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
   background-color: #949393;
-  padding: 20px;
 }
 .flex-container .slogan {
   flex: 1;
   padding: 20px;
-  color: white;
-}
-.flex-container .slogan h1 {
-  font-size: 75px;
-}
-.flex-container .slogan h2 {
-  font-size: 35px;
+  text-align: center;
+  display: table-column;
 }
 .flex-container .slogan .button {
   display: inline-block;
@@ -66,24 +63,21 @@ header .logo img:hover {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 250px;
-  margin-top: 30px;
+  transition: background-color 0.3s ease;
 }
 .flex-container .slogan .button:hover {
   background-color: #0a0225;
-  transform: scale(1.1);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 .flex-container .logo {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
-  padding-left: 20px;
+  justify-content: center;
+  align-items: center;
 }
 .flex-container .logo img {
-  max-width: 100%;
+  max-width: 75%;
   height: auto;
+  width: auto\9 ;
   transition: transform 0.6s ease;
 }
 .flex-container .logo img:hover {
@@ -93,90 +87,57 @@ header .logo img:hover {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 20px;
   padding: 20px;
   background-color: rgba(78, 78, 78, 0);
 }
-.grid-container .grid-item {
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+.grid-item {
   padding: 20px;
   background-color: white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-.grid-container .grid-item .matches-image img {
+
+.image img,
+.matches-image img {
   max-width: 100%;
   height: auto;
 }
-.grid-container body {
+
+.text {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
+  justify-content: center;
 }
-.grid-container #logo {
-  max-width: 15%;
-  margin: 20px auto;
-}
-.grid-container .login-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.grid-container .bodyprensa {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-.grid-container .main-content2 {
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.grid-container .main-content2 h2 {
+.text h2 {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #007bff;
 }
-.grid-container .main-content2 p {
+.text p {
   font-size: 18px;
   line-height: 1.6;
 }
-.grid-container .grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+
+.next-matches {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.grid-container .grid-container .grid-itempp {
-  text-align: center;
-}
-.grid-container .grid-container .grid-itempp img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.next-matches h2 {
+  font-size: 24px;
   margin-bottom: 10px;
-}
-.grid-container .grid-container .grid-itempp h3 {
-  font-size: 18px;
   color: #007bff;
 }
-@media (max-width: 768px) {
-  .grid-container .grid-container .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-  }
+.next-matches p {
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .socios-main {
@@ -259,15 +220,68 @@ header .logo img:hover {
   margin: 0 20px;
 }
 
+.grid-itempp {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid-itempp img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.grid-itempp h3 {
+  font-size: 18px;
+  color: #007bff;
+}
+
+.main-content2 {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.main-content2 h2 {
+  font-size: 28px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+.main-content2 p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.main-content2 .temperley-logo {
+  margin-top: 30px;
+}
+.main-content2 .temperley-logo img {
+  max-width: 230px;
+  height: auto;
+  transition: transform 0.6s ease;
+}
+.main-content2 .temperley-logo img:hover {
+  transform: rotateY(360deg);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
 .main-footer {
-  background-color: #2e2d2d;
+  background-color: #4e4e4e;
   color: white;
   text-align: center;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.main-footer p {
-  margin: 0;
+  padding: 10px 0;
 }/*# sourceMappingURL=estilo.css.map */

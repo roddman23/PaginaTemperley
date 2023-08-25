@@ -1,21 +1,16 @@
 .flex-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
   background-color: #949393;
-  padding: 20px;
 
   .slogan {
     flex: 1;
     padding: 20px;
-    color: white;
-
-    h1 {
-      font-size: 75px;
-    }
-
-    h2 {
-      font-size: 35px;
-    }
+    text-align: center;
+    display: table-column;
 
     .button {
       display: inline-block;
@@ -26,14 +21,10 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      margin-left: 250px;
-      margin-top: 30px;
+      transition: background-color 0.3s ease;
 
       &:hover {
         background-color: #0a0225;
-        transform: scale(1.1);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
       }
     }
   }
@@ -41,12 +32,13 @@
   .logo {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
-    padding-left: 20px;
+    justify-content: center;
+    align-items: center;
 
     img {
-      max-width: 100%;
+      max-width: 75%;
       height: auto;
+      width: auto\9;
       transition: transform 0.6s ease;
 
       &:hover {

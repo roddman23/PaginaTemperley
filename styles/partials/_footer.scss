@@ -1,14 +1,17 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
 .main-footer {
-  background-color: #2e2d2d;
+  background-color: #4e4e4e;
   color: white;
   text-align: center;
-  padding: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  p {
-    margin: 0;
-  }
+  padding: 10px 0;
 }
