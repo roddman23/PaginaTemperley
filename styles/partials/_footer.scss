@@ -15,3 +15,42 @@ main {
   text-align: center;
   padding: 10px 0;
 }
+
+$redes: (
+    facebook: blue,
+    instagram: #8b0960,
+    whatsapp: #3fda10
+);
+
+@each $redsocial, $color in $redes {
+  .fa-#{$redsocial} {
+    background-color: $color;
+  }
+}
+
+.pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+
+  .iconos {
+    display: flex;
+    gap: 10px;
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}

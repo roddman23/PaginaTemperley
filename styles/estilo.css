@@ -120,7 +120,7 @@ header .logo img:hover {
 .text h2 {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #007bff;
+  color: #539ee9;
 }
 .text p {
   font-size: 18px;
@@ -135,7 +135,7 @@ header .logo img:hover {
 .next-matches h2 {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #007bff;
+  color: #539ee9;
 }
 .next-matches p {
   font-size: 18px;
@@ -358,4 +358,39 @@ main {
   color: white;
   text-align: center;
   padding: 10px 0;
+}
+
+.fa-facebook {
+  background-color: blue;
+}
+
+.fa-instagram {
+  background-color: #8b0960;
+}
+
+.fa-whatsapp {
+  background-color: #3fda10;
+}
+
+.pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+.pie .iconos {
+  display: flex;
+  gap: 10px;
+}
+.pie .iconos a {
+  color: white;
+  text-decoration: none;
+}
+.pie .iconos a i {
+  font-size: 24px;
+}
+.pie p {
+  margin: 0;
 }/*# sourceMappingURL=estilo.css.map */
