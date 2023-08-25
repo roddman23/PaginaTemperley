@@ -4,7 +4,8 @@
     align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
-  
+  }
+
     .login-section,
     .register-section {
       background-color: #fff;
@@ -12,14 +13,16 @@
       padding: 20px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       width: 300px;
+      margin-bottom: 15px;
       margin: 0 10px;
+      }
   
       h2 {
         font-size: 24px;
         margin-bottom: 10px;
         color: #333;
-      }
-  
+        }
+
       form {
         display: flex;
         flex-direction: column;
@@ -53,7 +56,7 @@
           }
         }
       }
-    }
+    
   
     .divider {
       border-left: 1px solid #ccc;
@@ -81,5 +84,23 @@
         margin: 0 20px;
       }
     }
+@media (max-width: 768px) {
+  .socios-main {
+    flex-direction: column; 
+    align-items: center; 
+    
+    .login-section,
+    .logo,
+    .register-section {
+      width: 100%; 
+      max-width: 300px;
+      margin: 10px 0;
+    }
+    
+    .logo {
+      order: 0; 
+    }
   }
+}
+
   

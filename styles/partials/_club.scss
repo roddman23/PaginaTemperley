@@ -1,0 +1,69 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css');
+#imageCarousel {
+  margin-top: 20px;
+  max-width: 100%;
+
+  .carousel-inner {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    width: auto;
+    padding: 5px;
+    border-radius: 50%;
+
+    span {
+      font-size: 1rem;
+      color: white;
+    }
+  }
+}
+.container {
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: $temperleycolor
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: $temperleycolor
+    }
+  }
+  #imageCarousel {
+    margin-top: 20px;
+    max-width: 100%;
+  
+    .carousel-inner {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  
+    .carousel-control-prev, .carousel-control-next {
+      background-color: transparent;
+      width: auto;
+      padding: 5px;
+      border-radius: 50%;
+  
+      span {
+        font-size: 1rem;
+        color: white;
+      }
+    }
+  }
+}
+  
+  
