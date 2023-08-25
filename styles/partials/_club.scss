@@ -28,7 +28,7 @@
   h2 {
     font-size: 28px;
     margin-bottom: 15px;
-    color: $temperleycolor
+    color: $secondarycolor;
   }
 }
 @media (max-width: 768px) {
@@ -38,7 +38,7 @@
     h2 {
       font-size: 24px;
       margin-bottom: 10px;
-      color: $temperleycolor
+      color: $secondarycolor;
     }
   }
   #imageCarousel {

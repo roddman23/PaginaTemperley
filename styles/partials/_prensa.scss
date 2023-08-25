@@ -3,11 +3,11 @@
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    
     h2 {
       font-size: 28px;
-      margin-bottom 15px
-      color $secondarycolor
+      color: $secondarycolor;
+      margin-bottom: 15px;
+    }
     
     p {
       font-size: 18px;

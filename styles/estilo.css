@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  border: 0;
   font-family: "Titillium Web", sans-serif;
 }
 
@@ -254,7 +255,7 @@ form button:hover {
 }
 .grid-itempp h3 {
   font-size: 18px;
-  color: #007bff;
+  color: #539ee9;
 }
 
 .main-content2 {
@@ -265,7 +266,8 @@ form button:hover {
 }
 .main-content2 h2 {
   font-size: 28px;
-  color: #539ee9 margin-bottom 15px;
+  color: #539ee9;
+  margin-bottom: 15px;
 }
 .main-content2 p {
   font-size: 18px;
