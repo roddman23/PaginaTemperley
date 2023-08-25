@@ -179,6 +179,86 @@ header .logo img:hover {
   }
 }
 
+.socios-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+.socios-main .login-section,
+.socios-main .register-section {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 0 10px;
+}
+.socios-main .login-section h2,
+.socios-main .register-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+.socios-main .login-section form,
+.socios-main .register-section form {
+  display: flex;
+  flex-direction: column;
+}
+.socios-main .login-section form label,
+.socios-main .register-section form label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #666;
+}
+.socios-main .login-section form input,
+.socios-main .register-section form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.socios-main .login-section form button,
+.socios-main .register-section form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.socios-main .login-section form button:hover,
+.socios-main .register-section form button:hover {
+  background-color: #0056b3;
+}
+.socios-main .divider {
+  border-left: 1px solid #ccc;
+  height: 80%;
+  margin: 0 20px;
+}
+.socios-main .logo {
+  display: flex;
+  align-items: center;
+}
+.socios-main .logo img {
+  max-width: 224px;
+  height: auto;
+  margin-right: 10px;
+  transition: transform 0.6s ease;
+}
+.socios-main .logo img:hover {
+  transform: rotateY(360deg);
+}
+.socios-main .logo .divider {
+  border-left: 1px solid #ccc;
+  height: 60px;
+  margin: 0 20px;
+}
+
 .main-footer {
   background-color: #2e2d2d;
   color: white;

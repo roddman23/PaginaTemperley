@@ -22,7 +22,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/index.html">Inicio</a>
+                            <a class="nav-link" href="../index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./socios.html">Socios</a>
@@ -41,23 +41,40 @@
             </div>
         </nav>
    </header>  
-    
-    <img id="logo" src="../img/Club-Atlético-Temperley.png" alt="Escudo de Temperley">
-
-    <div class="login-container">
-        <h2 class="mb-4">Iniciar Sesión</h2>
-        <form>
-            <div class="mb-3">
-                <label for="username" class="form-label">Nombre de Usuario</label>
-                <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario">
+    <main class="socios-main">
+        <div class="login-section">
+            <h2>Iniciar Sesión</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+        
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+        <div class="divider"></div>
+           <div class="logo">
+                <img src="../img/Club-Atlético-Temperley.png" alt="Escudo de Temperley">
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
-            </div>
-            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-        </form>
-    </div>
+            <div class="divider"></div>
+        <div class="register-section">
+            <h2>Registrarse</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+        
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </main>
    <footer class="main-footer">
         <p>Derechos reservados &copy; 2023 Club Atlético Temperley Yamil Rodrigo Proyecto Final</p>
       </footer>
