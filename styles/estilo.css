@@ -265,6 +265,9 @@ form button:hover {
   border-radius: 10px;
   margin: 10px 0;
   padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-content2 {
