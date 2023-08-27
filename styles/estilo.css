@@ -256,7 +256,7 @@ form button:hover {
   }
 }
 .fs-upcoming-wrapper {
-  max-width: 1980px;
+  max-width: none;
   font-family: "Titillium Web", sans-serif;
   font-size: 14px;
   background: #fff;
