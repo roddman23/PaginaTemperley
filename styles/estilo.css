@@ -255,14 +255,6 @@ form button:hover {
     order: 0;
   }
 }
-.titulo {
-  font-family: "Titillium Web", sans-serif;
-  flex: 1;
-  padding: 20px;
-  text-align: left;
-  display: table-column;
-}
-
 .fs-upcoming-wrapper {
   box-sizing: border-box;
   width: 100%;
