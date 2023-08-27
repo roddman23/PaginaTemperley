@@ -1,15 +1,14 @@
-.fs-upcoming-wrapper{
-max-width: none;
-font-family: $fonttitillium;
-font-size: 14px;
-background: #fff;
-border: 1px solid #d4d9df;
--webkit-box-shadow: 0 1px 8px 0 rgba(0,0,0,.06);
-box-shadow: 0 1px 8px 0 rgba(0,0,0,.06);
-border-radius: 10px;
-margin: 10px 0;
-padding: 15px;
-display: flex;
-justify-content: center;
-align-items: center;
-}
+.fs-upcoming-wrapper{  
+    box-sizing:border-box;
+    width: 100%;
+    max-width: 1900px;
+    font-family: $fonttitillium;
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid #d4d9df;
+    -webkit-box-shadow: 0 1px 8px 0 rgba(0,0,0,.06);
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,.06);
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 15px;
+ }
