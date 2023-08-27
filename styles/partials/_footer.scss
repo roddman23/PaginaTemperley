@@ -17,9 +17,9 @@ main {
 }
 
 $redes: (
-    facebook: blue,
-    instagram: #8b0960,
-    whatsapp: #3fda10
+    facebook: #333,
+    instagram: #333,
+    whatsapp: #333,
 );
 
 @each $redsocial, $color in $redes {
