@@ -255,24 +255,17 @@ form button:hover {
     order: 0;
   }
 }
-.grid-itempp {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.grid-itempp img {
+.fs-upcoming-wrapper {
   width: 100%;
-  max-width: 600px;
-  height: auto;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-.grid-itempp h3 {
-  font-size: 18px;
-  color: #539ee9;
+  max-width: 1900px;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #d4d9df;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 15px;
 }
 
 .main-content2 {

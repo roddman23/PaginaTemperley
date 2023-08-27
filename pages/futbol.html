@@ -47,17 +47,16 @@
 <main>
     <div class="grid-containerPP">
         <div class="grid-itempp">
-            <img src="../img/Proximos partidos.jpeg" alt="Próximos Partidos">
-            <h3>Próximos Partidos</h3>
+            <div id="fs-upcoming"></div> <script> (function (w,d,s,o,f,js,fjs) { w['fsUpcomingEmbed']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) }; js = d.createElement(s), fjs = d.getElementsByTagName(s)[0]; js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs); }(window, document, 'script', 'fsUpcoming', 'https://cdn.footystats.org/embeds/upcoming-loc.js')); fsUpcoming('params', { teamID: 712, lang: 'es' }); </script> 
+            <div class="grid-itempp">
+            <div id="fs-standings"></div> <script> (function (w,d,s,o,f,js,fjs) { w['fsStandingsEmbed']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) }; js = d.createElement(s), fjs = d.getElementsByTagName(s)[0]; js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs); }(window, document, 'script', 'mw', 'https://cdn.footystats.org/embeds/standings-loc.js')); mw('params', { leagueID: 8836, lang: 'es' }); </script>
+        </div>
+       
         </div>
         <div class="grid-itempp">
-            <img src="../img/Ultimos Resultados.jpeg" alt="Últimos Encuentros">
-            <h3>Últimos Encuentros</h3>
+            <iframe src="https://footystats.org/es/api/club?id=712" height="100%" width="100%" style="height:420px; width:100%;" frameborder="0"></iframe>
         </div>
-        <div class="grid-itempp">
-            <img src="../img/Tabla puntos.jpeg" alt="Tabla de Posiciones">
-            <h3>Tabla de Posiciones</h3>
-        </div>
+    </div>
     </div>
 </main>
 <footer class="main-footer">

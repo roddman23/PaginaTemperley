@@ -23,7 +23,7 @@ $redes: (
 );
 
 @each $redsocial, $color in $redes {
-  .fa-#{$redsocial} {
+  .fa-#{$redsocial} { 
     background-color: $color;
   }
 }
