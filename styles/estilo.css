@@ -217,14 +217,34 @@ form button:hover {
   align-items: center;
 }
 .logo img {
-  max-width: 224px;
+  max-width: 250px;
   height: auto;
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-left: -15px;
 }
 .logo .divider {
   border-left: 1px solid #ccc;
   height: 60px;
   margin: 0 20px;
+}
+
+.login-section {
+  height: 374.8px;
+  margin: 70px;
+}
+.login-section button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0;
+}
+.login-section button:hover {
+  background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
