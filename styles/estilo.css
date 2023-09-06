@@ -231,26 +231,15 @@ form button:hover {
   background-color: #0056b3;
 }
 
-.divider {
-  border-left: 1px solid #ccc;
-  height: 80%;
-  margin: 0 20px;
-}
-
 .logo {
   display: flex;
   align-items: center;
 }
 .logo img {
-  max-width: 250px;
+  max-width: 336px;
   height: auto;
   margin-right: 20px;
   margin-left: -15px;
-}
-.logo .divider {
-  border-left: 1px solid #ccc;
-  height: 60px;
-  margin: 0 20px;
 }
 
 .login-section {
