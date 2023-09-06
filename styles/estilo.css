@@ -278,9 +278,9 @@ form button:hover {
   }
 }
 .page-container3 {
-  background-color: rgba(31, 33, 36, 0.11);
   background-image: url("../img/cat-bg.png");
-  background-position: 1150px;
+  background-position: right top;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 40%;
 }
@@ -394,9 +394,10 @@ form button:hover {
 .page-container1 {
   background-color: rgb(71, 181, 255);
   background-image: url("../img/cat-bg.png");
-  background-position: 1150px;
+  background-position: right top;
+  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: 40%;
+  background-size: 56%;
 }
 @media (max-width: 768px) {
   .page-container1 {

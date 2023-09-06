@@ -1,11 +1,11 @@
 .page-container3 {
-    background-color: rgba(31, 33, 36, 0.11);
-    background-image: url("../img/cat-bg.png");
-    background-position: 1150px;
-    background-repeat: no-repeat;
-    background-size: 40%;
-  
-    @media (max-width: 768px) {
+  background-image: url("../img/cat-bg.png");
+  background-position: right top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 40%;
+
+  @media (max-width: 768px) {
       background-position: center;
       background-size: cover;
       background-image: none;
