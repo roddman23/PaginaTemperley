@@ -288,6 +288,21 @@ form button:hover {
     order: 0;
   }
 }
+.page-container3 {
+  background-color: rgba(31, 33, 36, 0.11);
+  background-image: url("../img/cat-bg.png");
+  background-position: 1150px;
+  background-repeat: no-repeat;
+  background-size: 40%;
+}
+@media (max-width: 768px) {
+  .page-container3 {
+    background-position: center;
+    background-size: cover;
+    background-image: none;
+  }
+}
+
 .table-container {
   display: flex;
   flex-wrap: wrap;
@@ -295,6 +310,7 @@ form button:hover {
 }
 .table-container h1 {
   color: #539ee9;
+  animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 
 .table {
@@ -326,7 +342,20 @@ form button:hover {
 .table table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-
+@keyframes tracking-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
 .main-content2 {
   padding: 20px;
   max-width: 800px;
@@ -374,7 +403,7 @@ form button:hover {
 }
 
 .page-container1 {
-  background-color: rgb(41, 122, 243);
+  background-color: rgb(71, 181, 255);
   background-image: url("../img/cat-bg.png");
   background-position: 1150px;
   background-repeat: no-repeat;
