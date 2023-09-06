@@ -73,9 +73,9 @@ header .logo img {
   align-items: center;
 }
 .flex-container .logo img {
-  max-width: 70%;
+  max-width: 60%;
   height: auto;
-  width: auto\9 ;
+  width: auto\;;
 }
 
 .slogan {
@@ -95,16 +95,37 @@ header .logo img {
     opacity: 1;
   }
 }
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .slogan,
+  .logo {
+    flex: none;
+    width: 100%;
+  }
+  .slogan {
+    padding: 10px;
+  }
+  .logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .logo img {
+    max-width: 50%;
+  }
+}
 .grid-container {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0px;
-  padding: 25px;
+  gap: 5px;
+  padding: 15px;
   background-color: rgba(78, 78, 78, 0);
 }
 @media (max-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
   }
 }
 
@@ -120,34 +141,24 @@ header .logo img {
   height: auto;
 }
 
-.text {
+.text, .next-matches {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.text h2 {
+.text h2, .next-matches h2 {
   font-size: 24px;
   margin-bottom: 10px;
   color: #539ee9;
 }
-.text p {
+.text p, .next-matches p {
   font-size: 18px;
   line-height: 1.6;
 }
-
-.next-matches {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.next-matches h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #539ee9;
-}
-.next-matches p {
-  font-size: 18px;
-  line-height: 1.6;
+@media (max-width: 768px) {
+  .text h2, .next-matches h2 {
+    font-size: 20px;
+  }
 }
 
 .socios-main {
@@ -281,16 +292,20 @@ form button:hover {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  background-color: rgba(196, 223, 248, 0.774);
+  border-radius: 50px;
+  box-shadow: 3px;
 }
 .main-content2 h2 {
   font-size: 28px;
-  color: #539ee9;
+  color: white;
   margin-bottom: 15px;
 }
 .main-content2 p {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 15px;
+  color: white;
 }
 .main-content2 .temperley-logo {
   margin-top: 30px;
@@ -303,12 +318,34 @@ form button:hover {
 .main-content2 .temperley-logo img:hover {
   transform: rotateY(360deg);
 }
+@media (max-width: 768px) {
+  .main-content2 {
+    padding: 10px;
+    max-width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .main-content2 h2 {
+    font-size: 24px;
+  }
+  .main-content2 p {
+    font-size: 16px;
+  }
+}
 
-.page-container {
-  background-color: #539ee9;
-  background-image: url("../img/Temperley2022_f-2.jpg");
+.page-container1 {
+  background-color: rgb(41, 122, 243);
+  background-image: url("../img/cat-bg.png");
+  background-position: 1150px;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 40%;
+}
+@media (max-width: 768px) {
+  .page-container1 {
+    background-position: center;
+    background-size: cover;
+    background-image: none;
+  }
 }
 
 #imageCarousel {
