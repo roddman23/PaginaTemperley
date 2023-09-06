@@ -277,6 +277,10 @@ form button:hover {
   padding: 15px;
 }
 
+.page-container {
+  background-image: url("/img/te");
+}
+
 .main-content2 {
   padding: 20px;
   max-width: 800px;
