@@ -1,6 +1,4 @@
-.page-container{
-  background-image: url("/img/te");
-}
+
 .main-content2 {
     padding: 20px;
     max-width: 800px;
@@ -31,6 +29,12 @@
         }
       }
     }
+  }
+  .page-container{
+    background-color: $secondarycolor;
+    background-image: url("../img/Temperley2022_f-2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
   
  
