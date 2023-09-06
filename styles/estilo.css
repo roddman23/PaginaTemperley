@@ -107,6 +107,9 @@ header .logo img {
   }
   .slogan {
     padding: 10px;
+    color: #539ee9;
+    size: 24px;
+    text-shadow: #020325 0.1px 0.3px;
   }
   .logo {
     margin-top: 10px;
@@ -285,18 +288,43 @@ form button:hover {
     order: 0;
   }
 }
-.fs-upcoming-wrapper {
-  box-sizing: border-box;
+.table-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.table-container h1 {
+  color: #539ee9;
+}
+
+.table {
+  max-width: 100%;
+  padding: 20px;
+  margin: 10px;
+  margin-right: 40px;
+  margin-left: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.table h2 {
+  text-align: center;
+}
+.table table {
   width: 100%;
-  max-width: 1900px;
-  font-family: "Titillium Web", sans-serif;
-  font-size: 14px;
-  background: #fff;
-  border: 1px solid #d4d9df;
-  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.06);
-  border-radius: 10px;
-  margin: 10px 0;
-  padding: 15px;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.table table th, .table table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+.table table th {
+  background-color: #f2f2f2;
+}
+.table table tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
 .main-content2 {
