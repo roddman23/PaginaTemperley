@@ -20,8 +20,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const interestAmount = (productPrice * (interestRate / 100));
         const finalPrice = productPrice + interestAmount;
 
+        console.log("Producto seleccionado:", productType);
+        console.log("Precio del producto:", productPrice);
+        console.log("Cantidad de cuotas:", installments);
+        console.log("Intereses calculados:", interestAmount);
+        console.log("Precio final:", finalPrice);
+
         resultElement.innerHTML = `Intereses para el ${productType} en ${installments} cuotas: $${interestAmount.toFixed(2)}<br>Precio final: $${finalPrice.toFixed(2)}`;
     }
+
     productImages.addEventListener("click", function(event) {
         if (event.target.tagName === "IMG") {
             const allImages = productImages.querySelectorAll("img");
@@ -32,8 +39,10 @@ document.addEventListener("DOMContentLoaded", function() {
             calcularIntereses();
         }
     });
+
     installmentsSelect.addEventListener("change", function() {
         calcularIntereses();
     });
+
     calcularIntereses();
 });
