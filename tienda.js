@@ -1,46 +1,46 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const productImages = document.getElementById("product-images");
-    const installmentsSelect = document.getElementById("installments");
-    const resultElement = document.getElementById("result");
+    const imagenesProducto = document.getElementById("product-images");
+    const selectCuotas = document.getElementById("installments");
+    const elementoResultado = document.getElementById("result");
 
     function calcularIntereses() {
-        const selectedOption = installmentsSelect.value;
-        const productType = productImages.querySelector(".active").getAttribute("data-product");
-        const productPrice = parseFloat(productImages.querySelector(".active").getAttribute("data-price"));
-        const installments = parseInt(selectedOption);
+        const opcionSeleccionada = selectCuotas.value;
+        const tipoProducto = imagenesProducto.querySelector(".active").getAttribute("data-producto");
+        const precioProducto = parseFloat(imagenesProducto.querySelector(".active").getAttribute("data-precio"));
+        const cuotas = parseInt(opcionSeleccionada);
 
-        let interestRate = 0;
+        let tasaInteres = 0;
 
-        if (installments === 2) {
-            interestRate = 10;
-        } else if (installments === 3) {
-            interestRate = 15;
+        if (cuotas === 2) {
+            tasaInteres = 10; // 10% de interés para 2 cuotas
+        } else if (cuotas === 3) {
+            tasaInteres = 15; // 15% de interés para 3 cuotas
         }
 
-        const interestAmount = (productPrice * (interestRate / 100));
-        const finalPrice = productPrice + interestAmount;
+        const montoIntereses = (precioProducto * (tasaInteres / 100));
+        const precioFinal = precioProducto + montoIntereses;
 
-        console.log("Producto seleccionado:", productType);
-        console.log("Precio del producto:", productPrice);
-        console.log("Cantidad de cuotas:", installments);
-        console.log("Intereses calculados:", interestAmount);
-        console.log("Precio final:", finalPrice);
+        console.log("Producto seleccionado:", tipoProducto);
+        console.log("Precio del producto:", precioProducto);
+        console.log("Cantidad de cuotas:", cuotas);
+        console.log("Intereses calculados:", montoIntereses);
+        console.log("Precio final:", precioFinal);
 
-        resultElement.innerHTML = `Intereses para el ${productType} en ${installments} cuotas: $${interestAmount.toFixed(2)}<br>Precio final: $${finalPrice.toFixed(2)}`;
+        elementoResultado.innerHTML = `Intereses para el ${tipoProducto} en ${cuotas} cuotas: $${montoIntereses.toFixed(2)}<br>Precio final: $${precioFinal.toFixed(2)}`;
     }
 
-    productImages.addEventListener("click", function(event) {
-        if (event.target.tagName === "IMG") {
-            const allImages = productImages.querySelectorAll("img");
-            allImages.forEach(image => image.classList.remove("active"));
+    imagenesProducto.addEventListener("click", function(evento) {
+        if (evento.target.tagName === "IMG") {
+            const todasLasImagenes = imagenesProducto.querySelectorAll("img");
+            todasLasImagenes.forEach(imagen => imagen.classList.remove("activo"));
 
-            event.target.classList.add("active");
+            evento.target.classList.add("activo");
 
             calcularIntereses();
         }
     });
 
-    installmentsSelect.addEventListener("change", function() {
+    selectCuotas.addEventListener("change", function() {
         calcularIntereses();
     });
 
