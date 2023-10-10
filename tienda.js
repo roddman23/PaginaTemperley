@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
         let tasaInteres = 0;
 
         if (cuotas === 2) {
-            tasaInteres = 10; // 10% de interés para 2 cuotas
+            tasaInteres = 10;
         } else if (cuotas === 3) {
-            tasaInteres = 15; // 15% de interés para 3 cuotas
+            tasaInteres = 15;
         }
 
         const montoIntereses = (precioProducto * (tasaInteres / 100));
