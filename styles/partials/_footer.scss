@@ -1,0 +1,56 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+.main-footer {
+  background-color: #4e4e4e;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+$redes: (
+    facebook: #333,
+    instagram: #33333300,
+    whatsapp: #333,
+);
+
+@each $redsocial, $color in $redes {
+  .fa-#{$redsocial} { 
+    background-color: $color;
+  }
+}
+
+.pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+
+  .iconos {
+    display: flex;
+    gap: 10px;
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
