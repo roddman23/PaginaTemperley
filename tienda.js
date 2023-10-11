@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function calcularIntereses() {
         const opcionSeleccionada = selectCuotas.value;
-        const tipoProducto = imagenesProducto.querySelector(".active").getAttribute("data-producto");
-        const precioProducto = parseFloat(imagenesProducto.querySelector(".active").getAttribute("data-precio"));
+        const tipoProducto = imagenesProducto.querySelector(".activo").getAttribute("data-producto");
+        const precioProducto = parseFloat(imagenesProducto.querySelector(".activo").getAttribute("data-precio"));
         const cuotas = parseInt(opcionSeleccionada);
 
         let tasaInteres = 0;
