@@ -51,19 +51,41 @@
                 </div>
             </nav>
  </header>
-    <main class="page-container3">
+ <main class="page-container3">
         <h1>Tienda Club Atletico Temperley</h1>
+        <div class="cart">
+          <h2>Carrito de compras</h2>
+          <ul id="cart-items">
+            <!-- Aquí se mostrarán los elementos del carrito -->
+          </ul>
+          <p class="total-price">Total: $<span id="cart-total">0</span></p>
+          <button id="comprar-btn">Comprar</button>
+          <button id="vaciar-carrito-btn">Vaciar Carrito</button>
+        </div>
         <button id="modo-btn" class="round-button center-button">💡</button>
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="../img/celemania.jpg" alt=""></div>
-    <div class="swiper-slide"><img src="../img/promocelemania.jpg" alt=""></div>
-    <div class="swiper-slide"><img src="../img/camisetatemperley.jpg" alt=""></div>
-    ...
-  </div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-</div>
+   <div class="product-cards">
+    <div class="product-card" data-nombre="pulsera" data-precio="5000">
+    <img src="../img/pulseras.jpg" alt="Buzo Azul">
+    <h3>Pulseras Temperley</h3>
+    <p class="price">$5000</p>
+    <p>Camperon temperley nueva temporada.</p>
+    <button class="agregar-carrito">Agregar al carrito</button>
+   </div>
+   <div class="product-card" data-nombre="set asado" data-precio="32000">
+    <img src="../img/setasadotemp.jpg" alt="set asado">
+    <h3>set asado</h3>
+    <p class="price">$32000</p>
+    <p>set asado gasolero.</p>
+    <button class="agregar-carrito">Agregar al carrito</button>
+   </div>
+   <div class="product-card" data-nombre="vaso temperley" data-precio="3800">
+    <img src="../img/vasotemperley.jpg" alt="buzo hombre">
+    <h3>Vaso temperley</h3>
+    <p class="price">$3800</p>
+    <p>Buzo Temperley hombre 2023</p>
+    <button class="agregar-carrito">Agregar al carrito</button>
+   </div>
+   </div>
         <div class="sidebar">
           <ul id="product-list">
             <h2><a href="./tienda.html">Productos</a></h2>
@@ -87,7 +109,7 @@
           <button type="submit">Enviar</button>
         </form>
       </div>
-    </main>
+</main>
 <section>
     <div id="t4-footnav" class="t4-section  t4-footnav  t4-palette-dark">
         <div class="t4-section-inner container"><div class="t4-row row">
