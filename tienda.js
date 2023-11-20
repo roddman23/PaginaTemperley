@@ -5,60 +5,81 @@ document.addEventListener("DOMContentLoaded", function () {
   const comprarBtn = document.getElementById("comprar-btn");
   const vaciarCarritoBtn = document.getElementById("vaciar-carrito-btn");
   const searchInput = document.getElementById("search-input");
-  const categoriasProductos = ["Buzos", "Camisetas", "Accesorios", "Bolsos"];
-  const listaProductos = document.getElementById("product-list");
-
-  categoriasProductos.forEach((categoria) => {
-    const enlace = document.createElement("a");
-    enlace.textContent = categoria;
-    enlace.href = categoria.toLowerCase() + ".html";
-    const itemLista = document.createElement("li");
-    itemLista.appendChild(enlace);
-    listaProductos.appendChild(itemLista);
-  });
-
-  // Maneja cambios en el campo de búsqueda
-  searchInput.addEventListener("input", function () {
-    const term = searchInput.value.toLowerCase();
-    const resultados = buscarProductos(productos, term);
-    mostrarProductos(resultados);
-  });
-});
-
-// Función para buscar productos por término
-function buscarProductos(productos, term) {
-  return productos.filter((producto) => producto.nombre.toLowerCase().includes(term));
-}
-
-// Función para mostrar productos en la página
-function mostrarProductos(productos) {
-  const productList = document.getElementById("product-list");
-  productList.innerHTML = ""; // Limpiar la lista actual
-
-  productos.forEach((producto) => {
-    const enlace = document.createElement("a");
-    enlace.textContent = producto.nombre;
-    enlace.href = producto.categoria.toLowerCase() + ".html";
-    const itemLista = document.createElement("li");
-    itemLista.appendChild(enlace);
-    productList.appendChild(itemLista);
-  });
-}
 
   let carrito = []; // Array para almacenar los elementos del carrito
   let productos = [
-    { nombre: "Camperon unisex", categoria: "Buzos", precio: 54000, descripcion: "Camperon Temperley 2023" },
-    { nombre: "Buzo dama 2023", categoria: "Buzos", precio: 32000, descripcion: "Buzo dama temperley 2023" },
-    { nombre: "buzo hombre", categoria: "Buzos", precio: 32000, descripcion: "buzo hombre temperley 2023" },
-    { nombre: "Camiseta rosa", categoria: "camisetas", precio: 29800, descripcion: "camiseta rosa unisex" },
-    { nombre: "Camiseta niño", categoria: "camisetas", precio: 31000, descripcion: "camiseta niño" },
-    { nombre: "Camiseta Adulto", categoria: "Camisetas", precio: 32000, descripcion: "Camisetas adulto temperley" },
-    { nombre: "Bolso viajero temperley", categoria: "bolsos", precio: 6500, descripcion: "bolso viajero" },
-    { nombre: "mochila temperley", categoria: "bolsos", precio: 6000, descripcion: "mochila temperley" },
-    { nombre: "riñoneras", categoria: "bolsos", precio: 12000, descripcion: "riñoneras temperley" },
-    { nombre: "Pulsera temperley", categoria: "pulsera", precio: 5000, descripcion: "pulseras temperley" },
-    { nombre: "set asado", categoria: "accesorios", precio: 32000, descripcion: "set asado temperley" },
-    { nombre: "vaso temperley", categoria: "acceserios", precio: 3800, descripcion: "vaso temperley" },
+    {
+      nombre: "Camperon unisex",
+      categoria: "Buzos",
+      precio: 54000,
+      descripcion: "Camperon Temperley 2023",
+    },
+    {
+      nombre: "Buzo dama 2023",
+      categoria: "Buzos",
+      precio: 32000,
+      descripcion: "Buzo dama temperley 2023",
+    },
+    {
+      nombre: "buzo hombre",
+      categoria: "Buzos",
+      precio: 32000,
+      descripcion: "buzo hombre temperley 2023",
+    },
+    {
+      nombre: "Camiseta rosa",
+      categoria: "camisetas",
+      precio: 29800,
+      descripcion: "camiseta rosa unisex",
+    },
+    {
+      nombre: "Camiseta niño",
+      categoria: "camisetas",
+      precio: 31000,
+      descripcion: "camiseta niño",
+    },
+    {
+      nombre: "Camiseta Adulto",
+      categoria: "Camisetas",
+      precio: 32000,
+      descripcion: "Camisetas adulto temperley",
+    },
+    {
+      nombre: "Bolso viajero temperley",
+      categoria: "bolsos",
+      precio: 6500,
+      descripcion: "bolso viajero",
+    },
+    {
+      nombre: "mochila temperley",
+      categoria: "bolsos",
+      precio: 6000,
+      descripcion: "mochila temperley",
+    },
+    {
+      nombre: "riñoneras",
+      categoria: "bolsos",
+      precio: 12000,
+      descripcion: "riñoneras temperley",
+    },
+    {
+      nombre: "Pulsera temperley",
+      categoria: "pulsera",
+      precio: 5000,
+      descripcion: "pulseras temperley",
+    },
+    {
+      nombre: "set asado",
+      categoria: "accesorios",
+      precio: 32000,
+      descripcion: "set asado temperley",
+    },
+    {
+      nombre: "vaso temperley",
+      categoria: "accesorios",
+      precio: 3800,
+      descripcion: "vaso temperley",
+    },
   ];
 
   // Función para actualizar el carrito y el total
@@ -162,61 +183,41 @@ function mostrarProductos(productos) {
     actualizarCarrito();
   });
 
-  // Maneja cambios en el campo de búsqueda
+  // Implementa la funcionalidad de búsqueda
   searchInput.addEventListener("input", function () {
-    const term = searchInput.value.toLowerCase();
-    mostrarProductos(productos.filter((producto) => producto.nombre.toLowerCase().includes(term)));
+    const term = this.value.toLowerCase();
+    const filteredProductos = productos.filter((producto) =>
+      producto.nombre.toLowerCase().includes(term) || producto.categoria.toLowerCase().includes(term)
+    );
+
+    // TODO: Actualiza la interfaz con los productos filtrados
+    console.log(filteredProductos);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const categoriasProductos = ["Buzos", "Camisetas", "Accesorios", "Bolsos"];
+  const listaProductos = document.getElementById("product-list");
+  categoriasProductos.forEach((categoria) => {
+    const enlace = document.createElement("a");
+    enlace.textContent = categoria;
+    enlace.href = categoria.toLowerCase() + ".html";
+    const itemLista = document.createElement("li");
+    itemLista.appendChild(enlace);
+    listaProductos.appendChild(itemLista);
   });
 
-  // Función para mostrar los productos en la interfaz
-  function mostrarProductos(productosAMostrar) {
-    const productList = document.getElementById("product-list");
-    productList.innerHTML = "";
-
-    productosAMostrar.forEach((producto, index) => {
-      const card = document.createElement("div");
-      card.classList.add("card");
-      card.setAttribute("data-index", index);
-
-      const nombre = document.createElement("h3");
-      nombre.textContent = producto.nombre;
-
-      const categoria = document.createElement("p");
-      categoria.textContent = `Categoría: ${producto.categoria}`;
-
-      const precio = document.createElement("p");
-      precio.textContent = `Precio: $${producto.precio}`;
-
-      const descripcion = document.createElement("p");
-      descripcion.textContent = `Descripción: ${producto.descripcion}`;
-
-      const addButton = document.createElement("button");
-      addButton.classList.add("agregar-carrito");
-      addButton.textContent = "Agregar al Carrito";
-
-      card.appendChild(nombre);
-      card.appendChild(categoria);
-      card.appendChild(precio);
-      card.appendChild(descripcion);
-      card.appendChild(addButton);
-
-      productList.appendChild(card);
-    });
-
-    // Maneja clics en los botones "Agregar al carrito"
-    const agregarCarritoButtons = document.querySelectorAll(".agregar-carrito");
-    agregarCarritoButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        const card = this.parentElement;
-        const productoIndex = parseInt(card.getAttribute("data-index"));
-        const producto = productosAMostrar[productoIndex];
-
-        carrito.push(producto);
-        actualizarCarrito();
-      });
-    });
-  }
-
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const modoBtn = document.getElementById("modo-btn");
@@ -250,25 +251,4 @@ document.getElementById("full-contact-form").addEventListener("submit", function
   // Limpiar el formulario y ocultarlo
   this.reset();
   contactForm.style.display = "none";
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const categoriasProductos = ["Buzos", "Camisetas", "Accesorios", "Bolsos"];
-  const listaProductos = document.getElementById("product-list");
-  const searchInput = document.getElementById("search-input");
-
-  categoriasProductos.forEach((categoria) => {
-    const enlace = document.createElement("a");
-    enlace.textContent = categoria;
-    enlace.href = categoria.toLowerCase() + ".html";
-    const itemLista = document.createElement("li");
-    itemLista.appendChild(enlace);
-    listaProductos.appendChild(itemLista);
-  });
-
-  // Maneja cambios en el campo de búsqueda
-  searchInput.addEventListener("input", function () {
-    const term = searchInput.value.toLowerCase();
-    mostrarProductos(productos.filter((producto) => producto.nombre.toLowerCase().includes(term)));
-  });
 });
