@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="../styles/estilo.css">
 </head>
@@ -64,30 +65,32 @@
         </div>
         <button id="modo-btn" class="round-button center-button">💡</button>
    <div class="product-cards">
-    <div class="product-card" data-nombre="pulsera" data-precio="5000">
-    <img src="../img/pulseras.jpg" alt="Buzo Azul">
-    <h3>Pulseras Temperley</h3>
-    <p class="price">$5000</p>
-    <p>Camperon temperley nueva temporada.</p>
+    <div class="product-card" data-nombre="camiseta rosa" data-precio="29800">
+    <img src="../img/camiseta_rosa.jpg" alt="Buzo Azul">
+    <h3>Camiseta rosa</h3>
+    <p class="price">$29800</p>
+    <p>Camiseta Rosa</p>
     <button class="agregar-carrito">Agregar al carrito</button>
    </div>
-   <div class="product-card" data-nombre="set asado" data-precio="32000">
-    <img src="../img/setasadotemp.jpg" alt="set asado">
-    <h3>set asado</h3>
+   <div class="product-card" data-nombre="camiseta menor" data-precio="31000">
+    <img src="../img/camiseta_niño.jpg" alt="Buzo Gris">
+    <h3>Camiseta niño</h3>
+    <p class="price">$31000</p>
+    <p>camiseta niño temperley.</p>
+    <button class="agregar-carrito">Agregar al carrito</button>
+   </div>
+   <div class="product-card" data-nombre="camiseta adulto" data-precio="3200">
+    <img src="../img/camiseta_adulto.jpg" alt="buzo hombre">
+    <h3>Camisetas adulto</h3>
     <p class="price">$32000</p>
-    <p>set asado gasolero.</p>
-    <button class="agregar-carrito">Agregar al carrito</button>
-   </div>
-   <div class="product-card" data-nombre="vaso temperley" data-precio="3800">
-    <img src="../img/vasotemperley.jpg" alt="buzo hombre">
-    <h3>Vaso temperley</h3>
-    <p class="price">$3800</p>
-    <p>Buzo Temperley hombre 2023</p>
+    <p>Camisetas Adulto</p>
     <button class="agregar-carrito">Agregar al carrito</button>
    </div>
    </div>
         <div class="sidebar">
           <ul id="product-list">
+            <input type="text" id="busqueda-input" placeholder="Buscar productos...">
+             <button id="buscar-btn">Buscar</button>
             <h2><a href="./tienda.html">Productos</a></h2>
               <!-- Los elementos de la lista de productos se agregarán aquí mediante JavaScript -->
           </ul>
@@ -110,6 +113,31 @@
         </form>
       </div>
 </main>
+<section>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Detalles de la Compra</h2>
+      <form id="purchase-form">
+        <label for="cuotas">¿Desea pagar en cuotas?</label>
+        <select id="cuotas" name="cuotas">
+          <option value="no">No</option>
+          <option value="1">1 cuota</option>
+          <option value="2">2 cuotas</option>
+          <option value="3">3 cuotas</option>
+        </select>
+  
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+  
+        <label for="direccion">Dirección de Envío y Código Postal:</label>
+        <textarea id="direccion" name="direccion" required></textarea>
+  
+        <button type="button" id="submit-purchase">Realizar Compra</button>
+      </form>
+    </div>
+  </div>
+</section>
 <section>
     <div id="t4-footnav" class="t4-section  t4-footnav  t4-palette-dark">
         <div class="t4-section-inner container"><div class="t4-row row">
@@ -203,5 +231,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/5defac5f80.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>

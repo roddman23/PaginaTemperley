@@ -4,83 +4,56 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartTotal = document.getElementById("cart-total");
   const comprarBtn = document.getElementById("comprar-btn");
   const vaciarCarritoBtn = document.getElementById("vaciar-carrito-btn");
-  const searchInput = document.getElementById("search-input");
+  const modal = document.getElementById("modal");
+  const closeModal = document.querySelector(".close");
+  const submitPurchaseBtn = document.getElementById("submit-purchase");
+
+  comprarBtn.addEventListener("click", function () {
+    modal.style.display = "block";
+  });
+
+  closeModal.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  submitPurchaseBtn.addEventListener("click", function () {
+    const cuotas = document.getElementById("cuotas").value;
+
+    let email = "";  // Mover la declaración de email aquí
+
+    if (cuotas !== "no") {
+      email = document.getElementById("email").value;
+    }
+
+    if (cuotas === "no") {
+      const precioTotalSinInteres = carrito.reduce((total, item) => total + item.precio, 0);
+      const precioTotalConInteres = precioTotalSinInteres * (1 + obtenerInteres(cuotas));
+
+      Toastify({
+        text: `Compra realizada. ¡Gracias!\nCorreo electrónico: ${email}\nPrecio total: $${precioTotalConInteres.toFixed(2)}`,
+        backgroundColor: "green",
+      }).showToast();
+    } else {
+      const direccion = document.getElementById("direccion").value;
+      const cantidadCuotas = parseInt(cuotas);
+
+      const precioTotalSinInteres = carrito.reduce((total, item) => total + item.precio, 0);
+      const interes = obtenerInteres(cuotas);
+      const precioTotalConInteres = precioTotalSinInteres * (1 + interes);
+      const precioCuota = precioTotalConInteres / cantidadCuotas;
+
+      Toastify({
+        text: `Compra realizada. ¡Gracias!\nCorreo electrónico: ${email}\nDirección de envío: ${direccion}\nCantidad de cuotas: ${cuotas}\nInterés: ${interes * 100}%\nPrecio total: $${precioTotalConInteres.toFixed(2)}\nPrecio de cada cuota: $${precioCuota.toFixed(2)}`,
+        backgroundColor: "green",
+      }).showToast();
+
+      carrito = [];
+      actualizarCarrito();
+      modal.style.display = "none";
+    }
+  });
 
   let carrito = []; // Array para almacenar los elementos del carrito
-  let productos = [
-    {
-      nombre: "Camperon unisex",
-      categoria: "Buzos",
-      precio: 54000,
-      descripcion: "Camperon Temperley 2023",
-    },
-    {
-      nombre: "Buzo dama 2023",
-      categoria: "Buzos",
-      precio: 32000,
-      descripcion: "Buzo dama temperley 2023",
-    },
-    {
-      nombre: "buzo hombre",
-      categoria: "Buzos",
-      precio: 32000,
-      descripcion: "buzo hombre temperley 2023",
-    },
-    {
-      nombre: "Camiseta rosa",
-      categoria: "camisetas",
-      precio: 29800,
-      descripcion: "camiseta rosa unisex",
-    },
-    {
-      nombre: "Camiseta niño",
-      categoria: "camisetas",
-      precio: 31000,
-      descripcion: "camiseta niño",
-    },
-    {
-      nombre: "Camiseta Adulto",
-      categoria: "Camisetas",
-      precio: 32000,
-      descripcion: "Camisetas adulto temperley",
-    },
-    {
-      nombre: "Bolso viajero temperley",
-      categoria: "bolsos",
-      precio: 6500,
-      descripcion: "bolso viajero",
-    },
-    {
-      nombre: "mochila temperley",
-      categoria: "bolsos",
-      precio: 6000,
-      descripcion: "mochila temperley",
-    },
-    {
-      nombre: "riñoneras",
-      categoria: "bolsos",
-      precio: 12000,
-      descripcion: "riñoneras temperley",
-    },
-    {
-      nombre: "Pulsera temperley",
-      categoria: "pulsera",
-      precio: 5000,
-      descripcion: "pulseras temperley",
-    },
-    {
-      nombre: "set asado",
-      categoria: "accesorios",
-      precio: 32000,
-      descripcion: "set asado temperley",
-    },
-    {
-      nombre: "vaso temperley",
-      categoria: "accesorios",
-      precio: 3800,
-      descripcion: "vaso temperley",
-    },
-  ];
 
   // Función para actualizar el carrito y el total
   function actualizarCarrito() {
@@ -108,90 +81,31 @@ document.addEventListener("DOMContentLoaded", function () {
   agregarCarritoButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const card = this.parentElement;
-      const productoIndex = parseInt(card.getAttribute("data-index"));
-      const producto = productos[productoIndex];
+      const nombre = card.getAttribute("data-nombre");
+      const precio = parseInt(card.getAttribute("data-precio"));
 
-      carrito.push(producto);
+      carrito.push({ nombre, precio });
       actualizarCarrito();
     });
   });
 
-  // Maneja clic en el botón "Comprar"
-  comprarBtn.addEventListener("click", function () {
-    const cuotas = prompt("¿Desea pagar en cuotas? (si/No)");
-
-    if (cuotas === "si" || cuotas === "si") {
-      const cantidadCuotas = parseInt(prompt("Elija la cantidad de cuotas (1, 2, o 3):"));
-
-      if ([1, 2, 3].includes(cantidadCuotas)) {
-        // Definir el interés según la cantidad de cuotas
-        let interes;
-        switch (cantidadCuotas) {
-          case 1:
-            interes = 0.00; // 0%
-            break;
-          case 2:
-            interes = 0.10; // 10%
-            break;
-          case 3:
-            interes = 0.15; // 15%
-            break;
-        }
-
-        let email = "";
-        while (!isValidEmail(email)) {
-          email = prompt("Por favor, ingrese su correo electrónico:");
-          if (!isValidEmail(email)) {
-            alert("Por favor, ingrese un correo electrónico válido.");
-          }
-        }
-
-        const direccion = prompt("Por favor, ingrese su dirección de envío y código postal:");
-
-        if (email && direccion) {
-          // Calcula el precio total con interés
-          const precioTotalConInteres = carrito.reduce((total, item) => total + item.precio, 0) * (1 + interes);
-
-          // Calcula el precio de cada cuota
-          const precioCuota = precioTotalConInteres / cantidadCuotas;
-
-          // Aquí se muestra un resumen de la compra, incluyendo la cantidad de cuotas y el interés
-          const confirmacion = `Compra realizada. ¡Gracias!\nCorreo electrónico: ${email}\nDirección de envío: ${direccion}\nCantidad de cuotas: ${cantidadCuotas}\nInterés: ${interes * 100}%\nPrecio total: $${precioTotalConInteres.toFixed(2)}\nPrecio de cada cuota: $${precioCuota.toFixed(2)}`;
-          alert(confirmacion);
-
-          carrito = []; // Vaciar el carrito
-          actualizarCarrito();
-        } else {
-          alert("Debes proporcionar una dirección de correo electrónico y una dirección de envío válidas.");
-        }
-      } else {
-        alert("La cantidad de cuotas debe ser 1, 2, o 3.");
-      }
-    } else {
-      alert("Compra realizada. ¡Gracias!");
+  function obtenerInteres(cuotas) {
+    switch (parseInt(cuotas)) {
+      case 1:
+        return 0.00; // 0%
+      case 2:
+        return 0.10; // 10%
+      case 3:
+        return 0.15; // 15%
+      default:
+        return 0.00;
     }
-  });
-
-  function isValidEmail(email) {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailRegex.test(email);
   }
 
-  // Maneja clic en el botón "Vaciar Carrito"
+  // Manejar clic en el botón "Vaciar Carrito"
   vaciarCarritoBtn.addEventListener("click", function () {
     carrito = []; // Vaciar el carrito
     actualizarCarrito();
-  });
-
-  // Implementa la funcionalidad de búsqueda
-  searchInput.addEventListener("input", function () {
-    const term = this.value.toLowerCase();
-    const filteredProductos = productos.filter((producto) =>
-      producto.nombre.toLowerCase().includes(term) || producto.categoria.toLowerCase().includes(term)
-    );
-
-    // TODO: Actualiza la interfaz con los productos filtrados
-    console.log(filteredProductos);
   });
 });
 
@@ -207,14 +121,14 @@ document.addEventListener("DOMContentLoaded", function () {
     listaProductos.appendChild(itemLista);
   });
 
-  const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper(".swiper", {
     loop: true,
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   });
 });
@@ -242,13 +156,74 @@ contactFloater.addEventListener("click", function () {
   contactForm.style.display = contactForm.style.display === "none" ? "block" : "none";
 });
 
-// Manejar envío del formulario
 document.getElementById("full-contact-form").addEventListener("submit", function (event) {
   event.preventDefault();
 
-  alert("¡Mensaje enviado con éxito!");
+  Toastify({
+    text: "¡Mensaje enviado con éxito!",
+    backgroundColor: "green",
+  }).showToast();
 
   // Limpiar el formulario y ocultarlo
   this.reset();
   contactForm.style.display = "none";
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const busquedaInput = document.getElementById("busqueda-productos");
+  const resultadosBusqueda = document.getElementById("resultados-busqueda");
+  const productosContainer = document.querySelector(".productos-container");
+
+  // Manejar cambios en el input de búsqueda
+  busquedaInput.addEventListener("input", function () {
+    const busqueda = busquedaInput.value.toLowerCase();
+    const resultados = [];
+
+    // Filtrar productos que coincidan con la búsqueda
+    productos.forEach((producto) => {
+      if (producto.nombre.toLowerCase().includes(busqueda)) {
+        resultados.push(producto);
+      }
+    });
+
+    // Mostrar resultados en el contenedor
+    mostrarResultados(resultados);
+  });
+
+  function mostrarResultados(resultados) {
+    // Limpiar resultados anteriores
+    resultadosBusqueda.innerHTML = "";
+
+    // Mostrar cada resultado
+    resultados.forEach((producto) => {
+      const divResultado = document.createElement("div");
+      divResultado.classList.add("resultado-item");
+
+      // Crear imagen del producto
+      const imagenProducto = document.createElement("img");
+      imagenProducto.src = `url_de_la_imagen/${producto.nombre.replace(/\s+/g, '-')}.jpg`;
+      imagenProducto.alt = producto.nombre;
+      divResultado.appendChild(imagenProducto);
+
+      // Crear nombre y precio del producto
+      const nombreProducto = document.createElement("p");
+      nombreProducto.textContent = producto.nombre;
+      divResultado.appendChild(nombreProducto);
+
+      const precioProducto = document.createElement("p");
+      precioProducto.textContent = `$${producto.precio.toFixed(2)}`;
+      divResultado.appendChild(precioProducto);
+
+      // Crear botón para agregar al carrito
+      const agregarCarritoBtn = document.createElement("button");
+      agregarCarritoBtn.textContent = "Agregar al carrito";
+      agregarCarritoBtn.addEventListener("click", function () {
+        carrito.push({ nombre: producto.nombre, precio: producto.precio });
+        actualizarCarrito();
+      });
+      divResultado.appendChild(agregarCarritoBtn);
+
+      // Agregar el resultado al contenedor
+      resultadosBusqueda.appendChild(divResultado);
+    });
+  }
 });

@@ -1,0 +1,88 @@
+[
+    {
+      "nombre": "Camperon unisex",
+      "categoria": "Buzos",
+      "precio": 54000,
+      "descripcion": "Camperon Temperley 2023",
+      "imagen": "./img/camperon_unisex.jpg"
+    },
+    {
+      "nombre": "Buzo dama 2023",
+      "categoria": "Buzos",
+      "precio": 32000,
+      "descripcion": "Buzo dama temperley 2023",
+      "imagen": "./img/buzo_dama_2023.jpg"
+    },
+    {
+      "nombre": "buzo hombre",
+      "categoria": "Buzos",
+      "precio": 32000,
+      "descripcion": "buzo hombre temperley 2023",
+      "imagen": "./img/buzo_hombre.jpg"
+    },
+    {
+      "nombre": "Camiseta rosa",
+      "categoria": "camisetas",
+      "precio": 29800,
+      "descripcion": "camiseta rosa unisex",
+      "imagen": "./img/camiseta_rosa.jpg"
+    },
+    {
+      "nombre": "Camiseta niño",
+      "categoria": "camisetas",
+      "precio": 31000,
+      "descripcion": "camiseta niño",
+      "imagen": "./img/camiseta_niño.jpg"
+    },
+    {
+      "nombre": "Camiseta Adulto",
+      "categoria": "Camisetas",
+      "precio": 32000,
+      "descripcion": "Camisetas adulto temperley",
+      "imagen": "./img/camiseta_adulto.jpg"
+
+    },
+    {
+      "nombre": "Bolso viajero temperley",
+      "categoria": "bolsos",
+      "precio": 6500,
+      "descripcion": "bolso viajero",
+      "imagen": "./img/bolso_viajer_temperley.jpg"
+    },
+    {
+      "nombre": "mochila temperley",
+      "categoria": "bolsos",
+      "precio": 6000,
+      "descripcion": "mochila temperley",
+      "imagen": "./img/mochila_temperley.jpg"
+    },
+    {
+      "nombre": "riñoneras",
+      "categoria": "bolsos",
+      "precio": 12000,
+      "descripcion": "riñoneras temperley",
+      "imagen": "./img/riñoneras.jpg"
+    },
+    {
+      "nombre": "Pulsera temperley",
+      "categoria": "pulsera",
+      "precio": 5000,
+      "descripcion": "pulseras temperley",
+      "imagen": "./img/pulsera_temperley.jpg"
+    },
+    {
+      "nombre": "set asado",
+      "categoria": "accesorios",
+      "precio": 32000,
+      "descripcion": "set asado temperley",
+      "imagen": "./img/set_asado_temperley.jpg"
+    },
+    {
+      "nombre": "vaso temperley",
+      "categoria": "accesorios",
+      "precio": 3800,
+      "descripcion": "vaso temperley",
+      "imagen": "./img/vaso_temperley.jpg"
+    }
+  ]
+  
