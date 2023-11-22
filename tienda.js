@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeModal = document.querySelector(".close");
   const submitPurchaseBtn = document.getElementById("submit-purchase");
 
-  comprarBtn.addEventListener("click", function () {
+ comprarBtn.addEventListener("click", function () {
     modal.style.display = "block";
   });
 
@@ -18,11 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   submitPurchaseBtn.addEventListener("click", function () {
     const cuotas = document.getElementById("cuotas").value;
+    const emailInput = document.getElementById("email");
+    const direccionInput = document.getElementById("direccion");
 
     let email = "";
+    let direccion = "";
 
-    if (cuotas !== "no") {
-      email = document.getElementById("email").value;
+    if (emailInput && emailInput.value.trim() !== "") {
+      email = emailInput.value.trim();
+    }
+
+    if (direccionInput && direccionInput.value.trim() !== "") {
+      direccion = direccionInput.value.trim();
     }
 
     if (cuotas === "no") {
@@ -30,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const precioTotalConInteres = precioTotalSinInteres * (1 + obtenerInteres(cuotas));
 
       Toastify({
-        text: `Compra realizada. ¡Gracias!\nCorreo electrónico: ${email}\nPrecio total: $${precioTotalConInteres.toFixed(2)}`,
+        text: `Compra realizada. ¡Gracias!\nCorreo electrónico: ${email}\nDirección: ${direccion}\nPrecio total: $${precioTotalConInteres.toFixed(2)}`,
         backgroundColor: "green",
       }).showToast();
     } else {
