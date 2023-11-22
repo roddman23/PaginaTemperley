@@ -8,6 +8,41 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeModal = document.querySelector(".close");
   const submitPurchaseBtn = document.getElementById("submit-purchase");
 
+  const swiper = new Swiper(".swiper", {
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  const categoriasProductos = ["Buzos", "Camisetas", "Accesorios", "Bolsos"];
+  const listaProductos = document.getElementById("product-list");
+  categoriasProductos.forEach((categoria) => {
+    const enlace = document.createElement("a");
+    enlace.textContent = categoria;
+    enlace.href = categoria.toLowerCase() + ".html";
+    const itemLista = document.createElement("li");
+    itemLista.appendChild(enlace);
+    listaProductos.appendChild(itemLista);
+  });
+
+  const modoBtn = document.getElementById("modo-btn");
+  const body = document.body;
+
+  modoBtn.addEventListener("click", function () {
+    if (body.classList.contains("light-mode")) {
+      body.classList.remove("light-mode");
+      body.classList.add("dark-mode");
+    } else {
+      body.classList.remove("dark-mode");
+      body.classList.add("light-mode");
+    }
+  });
+
  comprarBtn.addEventListener("click", function () {
     modal.style.display = "block";
   });
@@ -122,41 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
   vaciarCarritoBtn.addEventListener("click", function () {
     carrito = [];
     actualizarCarrito();
-  });
-
-  const categoriasProductos = ["Buzos", "Camisetas", "Accesorios", "Bolsos"];
-  const listaProductos = document.getElementById("product-list");
-  categoriasProductos.forEach((categoria) => {
-    const enlace = document.createElement("a");
-    enlace.textContent = categoria;
-    enlace.href = categoria.toLowerCase() + ".html";
-    const itemLista = document.createElement("li");
-    itemLista.appendChild(enlace);
-    listaProductos.appendChild(itemLista);
-  });
-
-  const swiper = new Swiper(".swiper", {
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-
-  const modoBtn = document.getElementById("modo-btn");
-  const body = document.body;
-
-  modoBtn.addEventListener("click", function () {
-    if (body.classList.contains("light-mode")) {
-      body.classList.remove("light-mode");
-      body.classList.add("dark-mode");
-    } else {
-      body.classList.remove("dark-mode");
-      body.classList.add("light-mode");
-    }
   });
 
   const contactFloater = document.getElementById("contact-floater");
