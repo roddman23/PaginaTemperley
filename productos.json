@@ -4,42 +4,42 @@
       "categoria": "Buzos",
       "precio": 54000,
       "descripcion": "Camperon Temperley 2023",
-      "imagen": "camperon_unisex.jpg"
+      "imagen": "./img/camperon_unisex.jpg"
     },
     {
       "nombre": "Buzo dama 2023",
       "categoria": "Buzos",
       "precio": 32000,
       "descripcion": "Buzo dama temperley 2023",
-      "imagen": "buzo_dama_2023.jpg"
+      "imagen": "./img/buzo_dama_2023.jpg"
     },
     {
       "nombre": "buzo hombre",
       "categoria": "Buzos",
       "precio": 32000,
       "descripcion": "buzo hombre temperley 2023",
-      "imagen": "buzo_hombre.jpg"
+      "imagen": "./img/buzo_hombre.jpg"
     },
     {
       "nombre": "Camiseta rosa",
       "categoria": "camisetas",
       "precio": 29800,
       "descripcion": "camiseta rosa unisex",
-      "imagen": "camiseta_rosa.jpg"
+      "imagen": "./img/camiseta_rosa.jpg"
     },
     {
       "nombre": "Camiseta niño",
       "categoria": "camisetas",
       "precio": 31000,
       "descripcion": "camiseta niño",
-      "imagen": "camiseta_niño.jpg"
+      "imagen": "./img/camiseta_niño.jpg"
     },
     {
       "nombre": "Camiseta Adulto",
       "categoria": "Camisetas",
       "precio": 32000,
       "descripcion": "Camisetas adulto temperley",
-      "imagen": "camiseta_adulto.jpg"
+      "imagen": "./img/camiseta_adulto.jpg"
 
     },
     {
@@ -47,42 +47,42 @@
       "categoria": "bolsos",
       "precio": 6500,
       "descripcion": "bolso viajero",
-      "imagen": "bolso_viajer_temperley.jpg"
+      "imagen": "./img/bolso_viajer_temperley.jpg"
     },
     {
       "nombre": "mochila temperley",
       "categoria": "bolsos",
       "precio": 6000,
       "descripcion": "mochila temperley",
-      "imagen": "mochila_temperley.jpg"
+      "imagen": "./img/mochila_temperley.jpg"
     },
     {
       "nombre": "riñoneras",
       "categoria": "bolsos",
       "precio": 12000,
       "descripcion": "riñoneras temperley",
-      "imagen": "riñoneras.jpg"
+      "imagen": "./img/riñoneras.jpg"
     },
     {
       "nombre": "Pulsera temperley",
       "categoria": "pulsera",
       "precio": 5000,
       "descripcion": "pulseras temperley",
-      "imagen": "pulsera_temperley.jpg"
+      "imagen": "./img/pulsera_temperley.jpg"
     },
     {
       "nombre": "set asado",
       "categoria": "accesorios",
       "precio": 32000,
       "descripcion": "set asado temperley",
-      "imagen": "set_asado_temperley.jpg"
+      "imagen": "./img/set_asado_temperley.jpg"
     },
     {
       "nombre": "vaso temperley",
       "categoria": "accesorios",
       "precio": 3800,
       "descripcion": "vaso temperley",
-      "imagen": "vaso_temperley.jpg"
+      "imagen": "./img/vaso_temperley.jpg"
     }
   ]
   

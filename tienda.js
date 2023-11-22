@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   submitPurchaseBtn.addEventListener("click", function () {
     const cuotas = document.getElementById("cuotas").value;
 
-    let email = ""; // Mover la declaración de email aquí
+    let email = "";
 
     if (cuotas !== "no") {
       email = document.getElementById("email").value;
@@ -53,9 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  let carrito = []; // Array para almacenar los elementos del carrito
+  let carrito = [];
 
-  // Función para actualizar el carrito y el total
   function actualizarCarrito() {
     cartItems.innerHTML = "";
     let total = 0;
@@ -70,10 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
       total += item.precio;
     });
 
-    // Guardar el carrito en localStorage
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    // Asignar el evento clic a los botones de eliminar
     const eliminarButtons = document.querySelectorAll(".eliminar-item");
     eliminarButtons.forEach((button) => {
       button.addEventListener("click", function () {
@@ -86,13 +83,11 @@ document.addEventListener("DOMContentLoaded", function () {
     cartTotal.textContent = total;
   }
 
-  // Cargar el carrito desde localStorage al cargar la página
   if (localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
     actualizarCarrito();
   }
 
-  // Maneja clics en los botones "Agregar al carrito"
   agregarCarritoButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const card = this.parentElement;
@@ -107,24 +102,21 @@ document.addEventListener("DOMContentLoaded", function () {
   function obtenerInteres(cuotas) {
     switch (parseInt(cuotas)) {
       case 1:
-        return 0.00; // 0%
+        return 0.00;
       case 2:
-        return 0.10; // 10%
+        return 0.10;
       case 3:
-        return 0.15; // 15%
+        return 0.15;
       default:
         return 0.00;
     }
   }
 
-  // Manejar clic en el botón "Vaciar Carrito"
   vaciarCarritoBtn.addEventListener("click", function () {
-    carrito = []; // Vaciar el carrito
+    carrito = [];
     actualizarCarrito();
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
   const categoriasProductos = ["Buzos", "Camisetas", "Accesorios", "Bolsos"];
   const listaProductos = document.getElementById("product-list");
   categoriasProductos.forEach((categoria) => {
@@ -146,9 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
       prevEl: ".swiper-button-prev",
     },
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
   const modoBtn = document.getElementById("modo-btn");
   const body = document.body;
 
@@ -161,49 +151,104 @@ document.addEventListener("DOMContentLoaded", function () {
       body.classList.add("light-mode");
     }
   });
-});
 
-const contactFloater = document.getElementById("contact-floater");
-const contactForm = document.getElementById("contact-form");
+  const contactFloater = document.getElementById("contact-floater");
+  const contactForm = document.getElementById("contact-form");
 
-// Manejar clic en el ícono de la bolita flotante
-contactFloater.addEventListener("click", function () {
-  contactForm.style.display = contactForm.style.display === "none" ? "block" : "none";
-});
+  contactFloater.addEventListener("click", function () {
+    contactForm.style.display = contactForm.style.display === "none" ? "block" : "none";
+  });
 
-document.getElementById("full-contact-form").addEventListener("submit", function (event) {
-  event.preventDefault();
+  document.getElementById("full-contact-form").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  Toastify({
-    text: "¡Mensaje enviado con éxito!",
-    backgroundColor: "green",
-  }).showToast();
+    Toastify({
+      text: "¡Mensaje enviado con éxito!",
+      backgroundColor: "green",
+    }).showToast();
 
-  // Limpiar el formulario y ocultarlo
-  this.reset();
-  contactForm.style.display = "none";
-});
+    this.reset();
+    contactForm.style.display = "none";
+  });
 
-  // Botón para ordenar alfabéticamente
-  const ordenarAlfabeticamenteBtn = document.getElementById("ordenar-alfabeticamente");
+  const ordenarBtn = document.getElementById("ordenar-btn");
 
-  ordenarAlfabeticamenteBtn.addEventListener("click", function () {
-    // Obtener todas las tarjetas de productos
+  ordenarBtn.addEventListener("click", function () {
+    const ordenarPor = document.getElementById("ordenar-productos").value;
+
     const productCardsContainer = document.querySelector(".product-cards");
     const productCards = Array.from(productCardsContainer.getElementsByClassName("product-card"));
 
-    // Ordenar las tarjetas alfabéticamente por nombre
-    const sortedProductCards = productCards.sort((a, b) => {
-      const nombreA = a.getAttribute("data-nombre").toLowerCase();
-      const nombreB = b.getAttribute("data-nombre").toLowerCase();
-      return nombreA.localeCompare(nombreB);
-    });
+    let sortedProductCards;
+    switch (ordenarPor) {
+      case "alfabeticamente":
+        sortedProductCards = productCards.sort((a, b) => {
+          const nombreA = a.getAttribute("data-nombre").toLowerCase();
+          const nombreB = b.getAttribute("data-nombre").toLowerCase();
+          return nombreA.localeCompare(nombreB);
+        });
+        break;
+      case "precio-ascendente":
+        sortedProductCards = productCards.sort((a, b) => {
+          const precioA = parseInt(a.getAttribute("data-precio"));
+          const precioB = parseInt(b.getAttribute("data-precio"));
+          return precioA - precioB;
+        });
+        break;
+      case "precio-descendente":
+        sortedProductCards = productCards.sort((a, b) => {
+          const precioA = parseInt(a.getAttribute("data-precio"));
+          const precioB = parseInt(b.getAttribute("data-precio"));
+          return precioB - precioA;
+        });
+        break;
+      default:
+        sortedProductCards = productCards.sort((a, b) => {
+          const nombreA = a.getAttribute("data-nombre").toLowerCase();
+          const nombreB = b.getAttribute("data-nombre").toLowerCase();
+          return nombreA.localeCompare(nombreB);
+        });
+    }
 
-    // Limpiar el contenedor
     productCardsContainer.innerHTML = "";
 
-    // Agregar las tarjetas ordenadas al contenedor
     sortedProductCards.forEach((card) => {
       productCardsContainer.appendChild(card);
     });
   });
+
+  const searchBtn = document.getElementById("search-btn");
+  const searchInput = document.getElementById("search-input");
+
+  searchBtn.addEventListener("click", function () {
+    buscarProductos();
+  });
+
+  searchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      buscarProductos();
+    }
+  });
+
+  function buscarProductos() {
+    fetch('../productos.json')
+      .then(response => response.json())
+      .then(data => {
+        const searchTerm = searchInput.value.toLowerCase();
+        const productCardsContainer = document.querySelector(".product-cards");
+        const productCards = Array.from(productCardsContainer.getElementsByClassName("product-card"));
+
+        productCards.forEach((card) => {
+          const nombreProducto = card.getAttribute("data-nombre").toLowerCase();
+          const deberiaMostrarse = nombreProducto.includes(searchTerm);
+
+          if (deberiaMostrarse) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  }
+});

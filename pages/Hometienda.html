@@ -65,7 +65,17 @@
         </div>
         <button id="modo-btn" class="round-button center-button">💡</button>
         <div>
-          <button id="ordenar-alfabeticamente">Ordenar Alfabéticamente</button>
+          <label for="ordenar-productos">Ordenar por:</label>
+          <select id="ordenar-productos">
+            <option value="alfabeticamente">Alfabéticamente</option>
+            <option value="precio-ascendente">Precio Ascendente</option>
+            <option value="precio-descendente">Precio Descendente</option>
+          </select>
+          <button id="ordenar-btn">Ordenar</button>
+          <div class="search-container">
+            <input type="text" id="search-input" placeholder="Buscar productos...">
+            <button id="search-btn">Buscar</button>
+          </div>
          </div>
    <div class="product-cards">
     <div class="product-card" data-nombre="camiseta rosa" data-precio="29800">
@@ -82,8 +92,8 @@
     <p>camiseta niño temperley.</p>
     <button class="agregar-carrito">Agregar al carrito</button>
    </div>
-   <div class="product-card" data-nombre="camiseta adulto" data-precio="3200">
-    <img src="../img/camiseta_adulto.jpg" alt="buzo hombre">
+   <div class="product-card" data-nombre="camiseta adulto" data-precio="32000">
+    <img src="../img/camiseta_adulto.jpg" alt="camiseta adulto">
     <h3>Camisetas adulto</h3>
     <p class="price">$32000</p>
     <p>Camisetas Adulto</p>
@@ -103,7 +113,7 @@
     <p>Buzo dama temperley 2023.</p>
     <button class="agregar-carrito">Agregar al carrito</button>
    </div>
-   <div class="product-card" data-nombre="buzo hombre" data-precio="3200">
+   <div class="product-card" data-nombre="buzo hombre" data-precio="32000">
     <img src="../img/buzo_hombre.jpg" alt="buzo hombre">
     <h3>Buzo hombre  2023</h3>
     <p class="price">$32000</p>
@@ -156,7 +166,7 @@
         <div class="sidebar">
           <ul id="product-list">
             <h2><a href="./tienda.html">Home</a></h2>
-            <p>Productos</p>
+            <h2><a href="./Hometienda.html">Productos</a></h2>
            </ul>
       </div>
       <div id="contact-floater">
