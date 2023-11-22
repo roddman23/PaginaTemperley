@@ -1129,6 +1129,7 @@ body.dark-mode {
   align-items: center;
   border: 1px solid #ddd;
   padding: 10px;
+  margin-left: 10px;
 }
 .search-container input[type=text] {
   padding: 8px;
